@@ -18,17 +18,19 @@ Our network architecture is a **12-layer deep NNUE with 32x32 layers and skip co
 
 This engine was born from the synthesis of two specialized open-source concepts:
 
-1.  **High-Speed Move Generation:** The engine's core move generation is built upon the principles of a [`gpu perft` repository](https://www.chessprogramming.org/Perft). Perft (Performance Test) is a method to verify a move generator's correctness by counting all possible moves to a certain depth. Using a GPU-accelerated perft design ensures the move generator is not only extremely fast but also rigorously validated.
+1.  **High-Speed Move Generation:** The engine's core move generation is built with refactored [`gpu perft` repository](https://github.com/ankan-ban/perft_gpu). Perft (Performance Test) is a method to verify a move generator's correctness by counting all possible moves to a certain depth. Using a GPU-tailored magic tables, this repository ensures the move generator is not only extremely fast on gpu but also rigorously validated.
 
-2.  **GPU Chess Engine Framework:** The project's structure is influenced by public [`GPU Chess Engine` repositories](https://github.com/dkozykowski/Chess-Engine-GPU), which provide a framework for running engine logic on a GPU using CUDA. We have replaced the traditional evaluation function in such frameworks with our unique deep NNUE.
+2.  **GPU Chess Engine Framework:** The project's structure is influenced by public [`GPU Chess Engine` repositories](https://github.com/dkozykowski/Chess-Engine-GPU), which provide a framework for running engine logic on a GPU using CUDA. We have replaced the traditional evaluation function in such frameworks with our unique deep NNUE. The move generator by perft repo, but the core code structure and current minimax implementation, is heavily based on this source. 
 
 ## Key Features
 
 *   **GPU-Accelerated:** Core search and evaluation are implemented in C++/CUDA to leverage modern GPU hardware for massive parallelism.
-*   **Deep NNUE with Skip Connections:** A 12-layer deep network allows for a sophisticated understanding of chess positions without requiring a deep search.
+*   **Deep NNUE with Skip Connections:** A 12-layer deep network allows for a sophisticated understanding of chess positions without requiring any search unlike other NNUEs that work only for quiet positions. The model trained on billions of positions from searchless dataset.  
 *   **NNUE32 Buckets:** The engine uses 32 separate neural network models, selected based on the number of pieces, pawns, and the presence of queens, to provide expert evaluation for any phase of the game.
+*   **Fast move generator:** Implements perft magic tables.
 *   **UCI Compatible:** Implements the Universal Chess Interface (UCI) for compatibility with standard chess GUIs and tournament software.
-
+*   **Python scripts:** complemented pytorch training and testing python scripts, as well as converting pytorch model to cpp bin model used by the engine. 
+*   
 ## License
 
 The code authored for the deep-formix project is licensed under the **MIT License**.
