@@ -14,6 +14,8 @@ Instead of relying on a multi-ply search to reach a quiet (quiescent) position, 
 
 Our network architecture is a **12-layer deep NNUE with 32x32 layers and skip connections**. [Skip connections](https://medium.com/@iamchaudukien/skip-connection-and-explanation-of-resnet-b32fe84ba32e) (the core feature of ResNet architectures) are crucial for training such deep networks effectively, as they help prevent the vanishing gradient problem and allow for a more direct flow of information across layers. This deep structure allows the engine to learn complex positional nuances that shallower networks might miss.
 
+The searchless dataset was also used for training the network itself based on 10M games. The training took about 10 days on RTX 3080Ti with following few days fine tune. 
+
 ## Foundational Technologies
 
 This engine was born from the synthesis of two specialized open-source concepts:
