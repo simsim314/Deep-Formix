@@ -33,4 +33,4 @@ This engine was born from the synthesis of two specialized open-source concepts:
 
 The code authored for the deep-formix project is licensed under the **MIT License**.
 
-However, this project was initially influenced by repositories like "GPU Chess Engine," which may be licensed under the GNU General Public License (GPL). While the original code has been almost entirely rewritten, its derivative status is unclear. If this project is legally considered a derivative work, it would consequently fall under the **GNU GPL**.
+However, this project was initially influenced by repositories like "GPU Chess Engine," which licensed under the GNU General Public License (GPL). While the original code has been almost entirely rewritten, the evaluation and position classes are completely new, and the rest is heavily modified, its derivative status is unclear. If this project is legally considered a derivative work, it would consequently fall under the **GNU GPL**.
