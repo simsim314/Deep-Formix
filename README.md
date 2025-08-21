@@ -32,7 +32,7 @@ This engine was born from the synthesis of two specialized open-source concepts:
 *   **Fast move generator:** Implements perft magic tables.
 *   **UCI Compatible:** Implements the Universal Chess Interface (UCI) for compatibility with standard chess GUIs and tournament software.
 *   **Python scripts:** complemented pytorch training and testing python scripts, as well as converting pytorch model to cpp bin model used by the engine. 
-*   
+
 ## License
 
 The code authored for the deep-formix project is licensed under the **MIT License**.
